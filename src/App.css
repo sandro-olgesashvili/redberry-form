@@ -1,38 +1,274 @@
-.App {
-  text-align: center;
+.container {
+  margin: 79px 0px 147px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  max-height: 1080px;
+}
+.logo {
+  margin-bottom: 85px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.frame {
+  background-image: url("./images/Frame.png");
+  width: 781px;
+  height: 482px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 123px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav-btns {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 20px;
+}
+
+.nav-btns a {
+  text-align: center;
+  padding: 18px 60px;
+  background-color: #62a1eb;
+  border-radius: 8px;
+  color: #ffffff;
+}
+
+/* add note */
+.addnote {
+  background-color: #ebebeb;
+}
+
+.addnote-form-main {
+    display: flex;
+    flex-direction: column;
+    gap: 51px;
+}
+
+.addnote-header {
+  padding-top: 91px;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 66px;
+}
+.addnote-header p {
+  cursor: pointer;
+  font-family: Helvetica Neue;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.underline {
+  position: relative;
+  display: flex;
+  justify-content: center;
 }
 
-.App-link {
-  color: #61dafb;
+.underline::before {
+  bottom: -15px;
+  position: absolute;
+  content: "";
+  width: 185px;
+  height: 2px;
+  background-color: #000000;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.addnote-form {
+  margin: 0 auto;
+  height: 973px;
+  width: 1226px;
+  border-radius: 18px;
+  background-color: #ffffff;
+  margin-top: 42px;
+  padding: 96px 174px 44px 174px;
+  display: flex;
+  flex-direction: column;
+  gap: 52px;
+}
+/* addnote-form */
+
+.addnote-form-cont {
+  display: flex;
+  justify-content: center;
+  gap: 39px;
+}
+.addnote-form-two-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 134px;
+  width: 100%;
+  border-radius: 0px;
+  /* padding: 8px 24px 8px 24px; */
+}
+.addnote-form-two-inputs label {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.addnote-form-two-inputs input {
+  width: 407px;
+  height: 60px;
+  border: 1.8px solid #8ac0e2;
+  border-radius: 8px;
+  padding: 19px 16px;
+  display: block;
+  color:#000000 !important;
+}
+
+.addnote-form-two-inputs small {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #00000099;
+}
+
+.addnote-form-select {
+  width: 878px;
+  height: 60px;
+  background: #ebebeb;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  position: relative;
+}
+
+.addnote-form-select span {
+  font-family: Helvetica Neue;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: 0.04em;
+  text-align: left;
+}
+.addnote-form-select-btn {
+  border: none;
+  cursor: pointer;
+}
+.teams-option {
+  left: 0;
+  position: absolute;
+  z-index: 3;
+  top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  filter: drop-shadow(0px 4px 34px rgba(0, 0, 0, 0.25));
+  border-radius: 8px;
+  width: 100%;
+  background-color: #ffffff;
+}
+.teams-option li {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  color: #000000;
+  padding: 10px;
+  cursor: pointer;
+}
+.teams-option li:hover {
+  background: #e7f0f8;
+  width: 100%;
+}
+
+.addnote-form-one-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.addnote-form-one-inputs label {
+  font-family: Helvetica Neue;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.addnote-form-one-inputs input {
+  width: 878px;
+  height: 60px;
+  padding: 16px 19px;
+  border: 1.8px solid #8ac0e2;
+  border-radius: 8px;
+  appearance: none;
+}
+.addnote-form-one-inputs span {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #00000099;
+}
+
+.logo-circle {
+  padding-top: 67px;
+  padding-bottom: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.back-btn {
+  position: absolute;
+  top: 53px;
+  left: 70px;
+  border-radius: 50%;
+  width: 53px;
+  height: 53px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: #d9d9d9;
+  cursor: pointer;
+}
+
+.next-btn {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.next-btn button {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+  background: #62a1eb;
+  border-radius: 8px;
+  padding: 18px 60px;
+  border: none;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+
+.red-line {
+  color:#E52F2F;
+  border-color: #E52F2F !important;
+}
+
+.red-line-sm {
+  color: #E52F2F !important;
+}
+
+.red-line-team {
+  border: 2px solid #E52F2F !important
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
