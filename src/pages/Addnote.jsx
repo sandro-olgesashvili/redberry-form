@@ -40,11 +40,36 @@ const Addnote = () => {
       id: "",
     }
   );
+  const [laptopDetail, setLaptopDetail] = useState({
+    name: "",
+    image: [],
+    brand_id: "ლეპტოპის ბრენდი",
+    cpu: {
+      name: "CPU",
+      cores: "",
+      threads: "",
+    },
+    ram: "",
+    hard_drive_type: "",
+    state: "",
+    purchase_date: "",
+    price: "",
+  });
 
   const handleChange = (e) => {
     setObjInputs({
       ...objInputs,
       [e.target.name]: e.target.value,
+    });
+  };
+  const handleChangeLaptop = (e) => {
+    setLaptopDetail({
+      ...laptopDetail,
+      [e.target.name]: e.target.value,
+      cpu: {
+        ...laptopDetail.cpu,
+        [e.target.name]: e.target.value
+      } 
     });
   };
 
@@ -295,7 +320,15 @@ const Addnote = () => {
             </div>
           </div>
         ) : null}
-        {page === 2 ? <LaptopForm brands={brands} cpus={cpus} /> : null}
+        {page === 2 ? (
+          <LaptopForm
+            brands={brands}
+            cpus={cpus}
+            setLaptopDetail={setLaptopDetail}
+            laptopDetail={laptopDetail}
+            handleChangeLaptop={handleChangeLaptop}            
+          />
+        ) : null}
       </form>
       <div className="logo-circle">
         <img src={LogoCircle} alt="logo" />
