@@ -9,6 +9,7 @@ const Cpu = ({ cpus, setLaptopDetail, setCpuOnOff }) => {
             setLaptopDetail((prev) => ({
               ...prev,
               cpu: {
+                ...prev.cpu,
                 name: item.name,
               },
             }));

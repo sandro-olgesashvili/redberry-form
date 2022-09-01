@@ -40,21 +40,23 @@ const Addnote = () => {
       id: "",
     }
   );
-  const [laptopDetail, setLaptopDetail] = useState({
-    name: "",
-    image: [],
-    brand_id: "ლეპტოპის ბრენდი",
-    cpu: {
-      name: "CPU",
-      cores: "",
-      threads: "",
-    },
-    ram: "",
-    hard_drive_type: "",
-    state: "",
-    purchase_date: "",
-    price: "",
-  });
+  const [laptopDetail, setLaptopDetail] = useState(
+    JSON.parse(localStorage.getItem("laptop")) || {
+      name: "",
+      image: [],
+      brand_id: "ლეპტოპის ბრენდი",
+      cpu: {
+        name: "CPU",
+        cores: "",
+        threads: "",
+      },
+      ram: "",
+      hard_drive_type: "",
+      state: "",
+      purchase_date: "",
+      price: "",
+    }
+  );
 
   const handleChange = (e) => {
     setObjInputs({
@@ -66,10 +68,20 @@ const Addnote = () => {
     setLaptopDetail({
       ...laptopDetail,
       [e.target.name]: e.target.value,
+      // cpu: {
+      //   ...laptopDetail.cpu,
+      //   [e.target.name]: e.target.value
+      // }
+    });
+  };
+
+  const handleChangeCpu = (e) => {
+    setLaptopDetail({
+      ...laptopDetail,
       cpu: {
         ...laptopDetail.cpu,
-        [e.target.name]: e.target.value
-      } 
+        [e.target.name]: e.target.value,
+      },
     });
   };
 
@@ -91,6 +103,7 @@ const Addnote = () => {
 
   useEffect(() => {
     localStorage.setItem("items", JSON.stringify(objInputs));
+    localStorage.setItem("laptop", JSON.stringify(laptopDetail));
   });
 
   let check = () => {
@@ -326,7 +339,9 @@ const Addnote = () => {
             cpus={cpus}
             setLaptopDetail={setLaptopDetail}
             laptopDetail={laptopDetail}
-            handleChangeLaptop={handleChangeLaptop}            
+            handleChangeLaptop={handleChangeLaptop}
+            handleChangeCpu={handleChangeCpu}
+            setPage={setPage}
           />
         ) : null}
       </form>
