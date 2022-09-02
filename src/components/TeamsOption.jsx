@@ -6,7 +6,7 @@ const TeamsOption = ({ options, setOpenClose,setObjInputs, objInputs }) => {
           key={index}
           onClick={() => {
             setOpenClose(false);
-            setObjInputs({...objInputs, team_id: option.name, position_id:'პოზიცია' ,id: option.id})
+            setObjInputs({...objInputs, team_id: option.id, position_id:'პოზიცია'})
           }}
         >
           {option.name}

@@ -8,10 +8,7 @@ const Cpu = ({ cpus, setLaptopDetail, setCpuOnOff }) => {
             setCpuOnOff((prev) => !prev);
             setLaptopDetail((prev) => ({
               ...prev,
-              cpu: {
-                ...prev.cpu,
-                name: item.name,
-              },
+              laptop_cpu:item.name
             }));
           }}
         >

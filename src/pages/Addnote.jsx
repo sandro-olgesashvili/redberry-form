@@ -6,6 +6,10 @@ import LogoCircle from "../images/LOGO-102.png";
 import Vector from "../images/Vector.png";
 import { useNavigate } from "react-router-dom";
 import LaptopForm from "../components/LaptopForm";
+import { Link } from "react-router-dom";
+import Suc from '../images/suc.png'
+
+import axios from "axios";
 
 const Addnote = () => {
   ////
@@ -16,10 +20,14 @@ const Addnote = () => {
   const [teamErr, setTeamErr] = useState(false);
   const [postionErr, setPostionErr] = useState(false);
 
+  const [onOff, setOnOff] = useState(false);
+
   ///
 
   const navigate = useNavigate();
-  const [page, setPage] = useState(2);
+  const [page, setPage] = useState(
+    JSON.parse(localStorage.getItem("page")) || 1
+  );
 
   const [openClose, setOpenClose] = useState(false);
   const [openClosePost, setOpenClosePost] = useState(false);
@@ -37,26 +45,47 @@ const Addnote = () => {
       position_id: "პოზიცია",
       email: "",
       phone_number: "",
-      id: "",
     }
   );
   const [laptopDetail, setLaptopDetail] = useState(
     JSON.parse(localStorage.getItem("laptop")) || {
-      name: "",
-      image: [],
-      brand_id: "ლეპტოპის ბრენდი",
-      cpu: {
-        name: "CPU",
-        cores: "",
-        threads: "",
-      },
-      ram: "",
-      hard_drive_type: "",
-      state: "",
-      purchase_date: "",
-      price: "",
+      token: "bae8e75dfddb300fd995a39a32dbdebc",
+      laptop_name: "",
+      laptop_image: "",
+      laptop_brand_id: "ლეპტოპის ბრენდი",
+      laptop_cpu: "CPU",
+      laptop_cpu_cores: "",
+      laptop_cpu_threads: "",
+      laptop_ram: "",
+      laptop_hard_drive_type: "",
+      laptop_state: "",
+      laptop_purchase_date: "",
+      laptop_price: "",
     }
   );
+
+  async function onSubmit(e) {
+    e.preventDefault();
+    const data = {
+      ...objInputs,
+      ...laptopDetail,
+    };
+
+    if (onOff === true) {
+      await axios({
+        method: "post",
+        url: "https://pcfy.redberryinternship.ge/api/laptop/create",
+        data: data,
+        headers: { "Content-Type": "multipart/form-data" },
+      }).then(res => console.log('done')).catch((err) => console.log(err));
+      localStorage.removeItem('page')
+      localStorage.removeItem('image')
+      localStorage.removeItem('items')
+      localStorage.removeItem('file')
+      localStorage.removeItem('laptop')
+    }
+
+  }
 
   const handleChange = (e) => {
     setObjInputs({
@@ -68,20 +97,6 @@ const Addnote = () => {
     setLaptopDetail({
       ...laptopDetail,
       [e.target.name]: e.target.value,
-      // cpu: {
-      //   ...laptopDetail.cpu,
-      //   [e.target.name]: e.target.value
-      // }
-    });
-  };
-
-  const handleChangeCpu = (e) => {
-    setLaptopDetail({
-      ...laptopDetail,
-      cpu: {
-        ...laptopDetail.cpu,
-        [e.target.name]: e.target.value,
-      },
     });
   };
 
@@ -104,6 +119,7 @@ const Addnote = () => {
   useEffect(() => {
     localStorage.setItem("items", JSON.stringify(objInputs));
     localStorage.setItem("laptop", JSON.stringify(laptopDetail));
+    localStorage.setItem("page", JSON.stringify(page));
   });
 
   let check = () => {
@@ -111,9 +127,10 @@ const Addnote = () => {
 
     let regExSurname = /[ა-ჰ]{2,}/g;
 
-    let regExEmail = /[a-zA-Z]+@redberry\.ge/gi;
+    let regExEmail = /[a-zA-Z0-9]+@redberry\.ge/gi;
 
-    let regExPhoneNumber = /995[0-9]{9,10}/gi;
+    let regExPhoneNumber = /\+995[0-9]{9,9}/gi;
+
 
     if (regExName.test(objInputs.name) === false) {
       return setNameErr(true);
@@ -122,7 +139,7 @@ const Addnote = () => {
     }
 
     if (regExSurname.test(objInputs.surname) === false) {
-      return SetSurnameErr(true);
+      return  SetSurnameErr(true);
     } else {
       SetSurnameErr(false);
     }
@@ -142,22 +159,23 @@ const Addnote = () => {
       setEmailErr(false);
     }
     if (regExPhoneNumber.test(objInputs.phone_number) === false) {
-      setPhone_numberErr(true);
-      console.log("err");
-      console.log(objInputs.phone_number);
+      return setPhone_numberErr(true);
     } else {
       setPhone_numberErr(false);
     }
-    if (
-      nameErr === false &&
-      surnameErr === false &&
-      phone_numberErr === false &&
-      emailErr === false &&
-      teamErr === false &&
-      postionErr === false
-    ) {
-      setPage(2);
-    }
+
+    return setPage(2)
+
+    // if (
+    //   nameErr === false &&
+    //   surnameErr === false &&
+    //   phone_numberErr === false &&
+    //   emailErr === false &&
+    //   teamErr === false &&
+    //   postionErr === false
+    // ) {
+    //   setPage(2);
+    // }
   };
 
   return (
@@ -172,12 +190,17 @@ const Addnote = () => {
         <img src={Vector} alt="vector" />
       </button>
       <div className="addnote-header">
-        <p className={page === 1 ? "underline" : null}>თანამშრომლის ინფო</p>
-        <p className={page === 2 ? "underline" : null}>
+        <p
+          className={page === 1 ? "underline" : null}
+          onClick={() => setPage(1)}
+        >
+          თანამშრომლის ინფო
+        </p>
+        <p className={page === 2 ? "underline" : null} onClick={() => check()}>
           ლეპტოპის მახასიათებლები
         </p>
       </div>
-      <form className="addnote-form">
+      <form className="addnote-form" onSubmit={(e) => onSubmit(e)}>
         {page === 1 ? (
           <div className="addnote-form-main">
             <div className="addnote-form-cont">
@@ -237,7 +260,15 @@ const Addnote = () => {
                   : "addnote-form-select"
               }
             >
-              <span>{objInputs.team_id}</span>
+              {objInputs.team_id === "თიმი" ? (
+                <span>{objInputs.team_id}</span>
+              ) : (
+                options.map((item, index) => {
+                  if (item.id === objInputs.team_id) {
+                    return <span key={index}> {item.name}</span>;
+                  }
+                })
+              )}
               <button
                 type="button"
                 className="addnote-form-select-btn"
@@ -262,7 +293,15 @@ const Addnote = () => {
                   : "addnote-form-select"
               }
             >
-              <span>{objInputs.position_id}</span>
+              {objInputs.position_id === "პოზიცია" ? (
+                <span>{objInputs.position_id}</span>
+              ) : (
+                postionOpt.map((item, index) => {
+                  if (item.id === objInputs.position_id) {
+                    return <span key={index}>{item.name}</span>;
+                  }
+                })
+              )}
               <button
                 type="button"
                 className="addnote-form-select-btn"
@@ -310,7 +349,7 @@ const Addnote = () => {
               <label>ტელეფონის ნომერი</label>
               <input
                 className={phone_numberErr ? "red-line-team" : null}
-                type="number"
+                type="text"
                 name="phone_number"
                 placeholder="+995 598 00 07 01"
                 value={objInputs.phone_number}
@@ -340,14 +379,43 @@ const Addnote = () => {
             setLaptopDetail={setLaptopDetail}
             laptopDetail={laptopDetail}
             handleChangeLaptop={handleChangeLaptop}
-            handleChangeCpu={handleChangeCpu}
             setPage={setPage}
+            setOnOff={setOnOff}
+            onOff={onOff}
           />
         ) : null}
+        {/* {page === 2 ?(<div className="two-btn">
+          <button
+            type="button"
+            className="back-btn-page"
+            onClick={() => setPage(1)}
+          >
+            უკან
+          </button>
+          <button type="submit" className="finish-btn">
+            დამახსოვრება
+          </button>
+        </div>): null} */}
       </form>
       <div className="logo-circle">
         <img src={LogoCircle} alt="logo" />
       </div>
+      {onOff && (
+        <div className="success">
+          <div className="success-container">
+            <img src={Suc} alt="success" />
+            <h3>ჩანაწერი დამატებულია!</h3>
+            <div className="success-option">
+              <Link to="/laptoplist">
+                <button className="finish-btn">სიაში გადაყვანა</button>
+              </Link>
+              <Link to="/">
+                <span className="back-btn-page">მთავარი</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

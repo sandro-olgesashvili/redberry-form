@@ -7,7 +7,7 @@ const Brands = ({brands, setLaptopDetail, setBrandOnOff}) => {
                 <li key={index}
                     onClick={() => {
                         setBrandOnOff(prev => !prev)
-                        setLaptopDetail((prev) => ({...prev, brand_id: item.name}))
+                        setLaptopDetail((prev) => ({...prev, laptop_brand_id: item.id}))
                     }}
                 >{item.name}</li>
             ))}
