@@ -71,6 +71,7 @@ const Addnote = () => {
       ...laptopDetail,
     };
 
+
     if (onOff === true) {
       await axios({
         method: "post",
@@ -123,13 +124,13 @@ const Addnote = () => {
   });
 
   let check = () => {
-    let regExName = /[ა-ჰ]{2,}/g;
+    let regExName = /([ა-ჰ]{2,})$/gm;
 
-    let regExSurname = /[ა-ჰ]{2,}/g;
+    let regExSurname = /([ა-ჰ]{2,})$/gm
 
-    let regExEmail = /[a-zA-Z0-9]+@redberry\.ge/gi;
+    let regExEmail = /([a-zA-Z0-9]+@redberry\.ge)$/gm;
 
-    let regExPhoneNumber = /\+995[0-9]{9,9}/gi;
+    let regExPhoneNumber = /^(\+995[0-9]{9})$/gi;
 
 
     if (regExName.test(objInputs.name) === false) {
@@ -165,17 +166,6 @@ const Addnote = () => {
     }
 
     return setPage(2)
-
-    // if (
-    //   nameErr === false &&
-    //   surnameErr === false &&
-    //   phone_numberErr === false &&
-    //   emailErr === false &&
-    //   teamErr === false &&
-    //   postionErr === false
-    // ) {
-    //   setPage(2);
-    // }
   };
 
   return (
@@ -184,7 +174,7 @@ const Addnote = () => {
         type="button"
         className="back-btn"
         onClick={() => {
-          navigate("/");
+          navigate(-1);
         }}
       >
         <img src={Vector} alt="vector" />

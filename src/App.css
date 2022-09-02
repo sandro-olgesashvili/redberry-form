@@ -545,7 +545,6 @@ input[type="radio"]::after {
   text-align: left;
 }
 
-
 .btn-abs {
   position: absolute;
   right: 0;
@@ -554,7 +553,7 @@ input[type="radio"]::after {
 
 .success {
   position: fixed;
-  background-color: #4A4A4A;
+  background-color: #4a4a4a;
   top: 0;
   left: 0;
   width: 100%;
@@ -565,7 +564,7 @@ input[type="radio"]::after {
 }
 .success-container {
   padding: 44px 250px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -586,3 +585,75 @@ input[type="radio"]::after {
   flex-direction: column;
   gap: 28px;
 }
+
+.laptop-list-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 80px;
+  padding-bottom: 97px;
+  font-family: Helvetica Neue;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+.laptop-list-item {
+  padding: 14px;
+  background-color: #EAFAFF;
+  border: 1px solid #aed1ea;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  width: 563px;
+}
+.laptop-list-item img {
+  width: 266px;
+  height: 178px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.laptop-list-items {
+  padding-inline: 371px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 52px;
+  padding-bottom: 168px;
+}
+
+.laptop-list-item-text {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.laptop-list-item-text span {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.see-more {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #4386A9;
+  margin-top: 22px;
+  text-decoration: underline;
+}
+
+

@@ -4,19 +4,26 @@ import checkdone from '../images/checkdone.svg'
 
 import { useDropzone } from "react-dropzone";
 
+
 const DragDrop = ({ laptopDetail, setLaptopDetail, lapImgErr }) => {
+  
   const [fileimg, setFileimg] = useState(
     JSON.parse(localStorage.getItem("image")) || ""
   );
+
+
+  useEffect(() => {
+    console.log(laptopDetail)
+  }, [laptopDetail])
+
+  
   const onDrop = useCallback(
-    (acceptedFiles) => {
-      acceptedFiles.forEach((file) => {
-        
-        console.log(laptopDetail);
-        setLaptopDetail({
-          ...laptopDetail,
-          laptop_image: file,
-        });
+     (acceptedFiles) => {
+       acceptedFiles.map((file) => {        
+        setLaptopDetail((prev) => ({
+          ...prev,
+         laptop_image: file
+        }));
         const reader = new FileReader();
         reader.onload = () => {
           setFileimg(reader.result);
@@ -24,7 +31,7 @@ const DragDrop = ({ laptopDetail, setLaptopDetail, lapImgErr }) => {
         reader.readAsDataURL(file);
       });
     },
-    [setLaptopDetail, laptopDetail]
+    
   );
 
   const { getRootProps, getInputProps, isDragActive, open } = useDropzone({
@@ -96,7 +103,7 @@ const DragDrop = ({ laptopDetail, setLaptopDetail, lapImgErr }) => {
       </div>
       {fileimg !== "" ?<div className="check">
         <img src={checkdone} alt="check" />
-        <span>{laptopDetail.laptop_image.path}</span>
+        <span>{laptopDetail.laptop_image.path},  {(laptopDetail.laptop_image.size / 10000 ).toFixed(0)} mb</span>
       </div>: null}
     </div>
   );
