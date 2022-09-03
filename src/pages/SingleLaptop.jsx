@@ -69,6 +69,7 @@ const SingleLaptop = () => {
             src={`https://pcfy.redberryinternship.ge/${laptopDetail.laptop.image}`}
             alt="img"
           />
+          <div className="laptop-info-image-personal">
           <div className="span-label">
             <span>სახელი:</span>
             <span>თიმი:</span>
@@ -92,6 +93,7 @@ const SingleLaptop = () => {
               ))}
             <span>{laptopDetail.user.email}</span>
             <span>{laptopDetail.user.phone_number}</span>
+          </div>
           </div>
         </div>
         <div className="laptop-info-technical">
@@ -129,17 +131,13 @@ const SingleLaptop = () => {
         <div className="laptop-info-price-state">
           <div className="laptop-info-price-state-first">
             <div className="span-label">
-              <span>ლეპტოპის მდგომარეობა:</span>
+              <span className="span-label-dektop">ლეპტოპის მდგომარეობა:</span>
+              <span className="span-label-mobile">მდგომარეობა:</span>
               <span>ლეპტოპის ფასი:</span>
             </div>
             <div className="span-data">
-              <span>{laptopDetail.laptop.state}</span>
-              <span
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "10px",
-                }}
+              {laptopDetail.laptop.state === 'new' ? <span>ახალი</span> : <span>მეორადი</span>}
+              <span className="currency-span"
               >
                 {laptopDetail.laptop.price} <img src={lari} alt="lari" />
               </span>

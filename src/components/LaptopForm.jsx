@@ -35,7 +35,7 @@ const LaptopForm = ({
   //chec function
 
   const laptopErrCheck = () => {
-    const regexLapName = /^([a-zA-Z0-9!@#$%^&*()_+=])+$/gm;
+    const regexLapName = /([a-zA-Z0-9!@#$%^&*()_+=])+$/gm;
 
     if (laptopDetail.laptop_image === "") {
       return setLapImgErr(true);

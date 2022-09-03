@@ -656,6 +656,13 @@ input[type="radio"]::after {
   text-decoration: underline;
 }
 
+.check div {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  align-items: flex-start;
+}
+
 .laptop-info {
   margin-top: 76px;
 }
@@ -673,8 +680,8 @@ input[type="radio"]::after {
   display: flex;
   align-items: center;
   padding-bottom: 84px;
-  border-bottom: 1px solid #A5A5A5;
-
+  border-bottom: 1px solid #a5a5a5;
+  gap: 68px;
 }
 
 .laptop-info-container {
@@ -700,6 +707,10 @@ input[type="radio"]::after {
   margin-right: 80px;
 }
 
+.span-label-mobile {
+  display: none;
+}
+
 .span-data {
   display: flex;
   flex-direction: column;
@@ -709,16 +720,15 @@ input[type="radio"]::after {
   letter-spacing: 0em;
   text-align: left;
   gap: 32px;
-  color:#797979
+  color: #797979;
 }
 .laptop-info-technical {
-  padding-top:54px;
+  padding-top: 54px;
   padding-bottom: 77px;
-  border-bottom: 1px solid #A5A5A5;
+  border-bottom: 1px solid #a5a5a5;
   display: flex;
   gap: 211px;
 }
-
 
 .laptop-info-technical-first {
   display: flex;
@@ -730,11 +740,10 @@ input[type="radio"]::after {
 }
 .laptop-info-price-state {
   display: flex;
-  gap:246px;
+  gap: 246px;
   margin-top: 54px;
   margin-bottom: 91px;
 }
-
 
 .laptop-info-price-state-first {
   display: flex;
@@ -758,6 +767,360 @@ input[type="radio"]::after {
   position: absolute;
   right: 30px;
   bottom: 20px;
-  width:18px;
+  width: 18px;
   height: 21px;
+}
+
+.currency-span {
+  display: "flex";
+  align-items: "center";
+  gap: "10px";
+}
+
+.photo-logo {
+  display: none;
+}
+.error-image {
+  margin-bottom: 19px;
+  width: 38px;
+  height: 34px;
+}
+
+.addnote-header-for-mobile-container {
+  display: none;
+}
+
+.for-mobile {
+  display: none;
+}
+
+.btn-abs-mob {
+  display: none;
+}
+
+.laptop-info-image-personal {
+  display: flex;
+}
+
+@media screen and (max-width: 390px) {
+  .container {
+    margin-bottom: 35px;
+  }
+  .frame {
+    background-image: url("./images/Group.png");
+    height: 349px;
+    width: 268px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .nav-btns a {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: center;
+  }
+  .back-btn {
+    top: 34px;
+    left: 16px;
+    height: 16px;
+    width: 10px;
+    background-color: transparent;
+  }
+  .addnote {
+    max-width: 390px;
+  }
+
+  .addnote-header {
+    display: none;
+  }
+  .addnote-header-for-mobile-container {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 84px;
+  }
+  .addnote-header-for-mobile-container span {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #898989;
+  }
+
+  .addnote-form {
+    width: 390px;
+    max-width: 390px;
+    padding: 38px 16px;
+    border-radius: 0;
+    margin-top: 0;
+    gap: 0px;
+    overflow-y: hidden;
+  }
+  .addnote-form-main {
+    gap: 23px;
+  }
+  .addnote-form-cont {
+    flex-direction: column;
+    gap: 25px;
+  }
+  .addnote-form-select {
+    width: 100%;
+  }
+  .margin-for-select {
+    margin-bottom: 25px;
+  }
+
+  .logo-circle {
+    display: none;
+  }
+
+  .addnote-form-one-inputs input {
+    width: 100%;
+  }
+  .next-btn button {
+    padding: 12px 45px;
+    margin-bottom: 58px;
+  }
+  .drag-drop {
+    width: 358px;
+    height: 244px;
+  }
+  .photo-logo {
+    display: inline;
+    width: 45px;
+    height: 40px;
+  }
+  .drag-drop div {
+    padding: 0;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .drag-drop div p {
+    margin-top: 30px;
+    margin-bottom: 12px;
+    font-family: Helvetica Neue;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 0em;
+    text-align: center;
+  }
+
+  .drag-drop div button {
+    display: none;
+  }
+
+  .for-dekstop {
+    display: none;
+  }
+  .for-mobile {
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #4386a9;
+  }
+
+  .laptop-name-brand {
+    flex-direction: column;
+  }
+
+  .cpu {
+    flex-direction: column;
+    gap: 22px;
+    margin-bottom: 22px;
+  }
+  .cpu-second-line {
+    flex-direction: column;
+  }
+  .date-price-condition {
+    margin: 0;
+  }
+  .cpu-second-line {
+    gap: 23px;
+    padding-bottom: 0px;
+  }
+  .date-price {
+    flex-direction: column;
+  }
+  .laptop-name-brand {
+    gap: 26px;
+  }
+
+  .finish-btn {
+    border-radius: 8px;
+    padding: 12px 14px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+  .date-price-condition {
+    padding-top: 24px;
+  }
+  .date-price {
+    gap: 0px;
+  }
+  .error-image {
+    order: 1;
+    margin-bottom: 0;
+    width: 23px;
+    height: 21px;
+  }
+  .btn-abs-mob {
+    display: flex !important;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0em;
+    text-align: left;
+    background: #62a1eb;
+    border-radius: 8px;
+    padding: 10px 12px;
+    border: none;
+    color: #ffffff;
+  }
+  .check {
+    gap: 15px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .check span {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+  .check div {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .check-span {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+  .success {
+    background-color: #ffffff;
+  }
+  .laptop-list-items {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 26px;
+    padding-inline: 16px;
+  }
+  .laptop-list-item {
+    width: 100%;
+  }
+  .laptop-list-item img {
+    width: 164px;
+    height: 109px;
+  }
+  .laptop-list-item-text {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+  .laptop-list-header {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: center;
+    padding-top: 31px;
+    padding-bottom: 33px;
+  }
+  .laptop-info {
+    margin: 0;
+  }
+  .laptop-info-header {
+    padding-top: 31px;
+    padding-bottom: 33px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: center;
+    margin: 0;
+  }
+  .laptop-info-container {
+    padding: 0;
+  }
+  .laptop-info-container {
+    padding-inline: 16px;
+  }
+  .laptop-info-image-personal-info {
+    flex-direction: column;
+    gap: 29px;
+    padding-bottom: 17px;
+  }
+
+  .laptop-info-image-personal-info img {
+    margin: 0;
+    width: 358px;
+    height: 191px;
+  }
+  .laptop-info-image-personal {
+    width: 100%;
+  }
+  .span-label {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 25px;
+    letter-spacing: 0em;
+    text-align: left;
+    gap: 5px;
+    width: 131px;
+  }
+  .span-data {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: 0em;
+    text-align: left;
+    gap: 5px;
+    justify-content: space-evenly;
+  }
+
+  .laptop-info-technical {
+    padding-top: 23px;
+    flex-direction: column;
+    gap: 0;
+    padding-bottom: 23px;
+  }
+  .laptop-info-technical-first {
+    gap: 0;
+  }
+  .laptop-info-technical-second {
+    gap: 0;
+  }
+  
+  .laptop-info-price-state {
+    flex-direction: column;
+    gap: 0;
+    margin-top: 23px;
+  }
+  .laptop-info-price-state-first {
+    gap: 0;
+  }
+  .currency-span img {
+    width: 14px;
+    height: 14px;
+  }
+  .span-label-mobile {
+    display: inline;
+  }
+  .span-label-dektop {
+    display: none;
+  }
 }

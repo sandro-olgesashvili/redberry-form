@@ -7,7 +7,7 @@ import Vector from "../images/Vector.png";
 import { useNavigate } from "react-router-dom";
 import LaptopForm from "../components/LaptopForm";
 import { Link } from "react-router-dom";
-import Suc from '../images/suc.png'
+import Suc from "../images/suc.png";
 
 import axios from "axios";
 
@@ -26,7 +26,7 @@ const Addnote = () => {
 
   const navigate = useNavigate();
   const [page, setPage] = useState(
-    JSON.parse(localStorage.getItem("page")) || 2
+    JSON.parse(localStorage.getItem("page")) || 1
   );
 
   const [openClose, setOpenClose] = useState(false);
@@ -51,7 +51,7 @@ const Addnote = () => {
     JSON.parse(localStorage.getItem("laptop")) || {
       token: "bae8e75dfddb300fd995a39a32dbdebc",
       laptop_name: "",
-      laptop_image: "",
+      laptop_image: '',
       laptop_brand_id: "ლეპტოპის ბრენდი",
       laptop_cpu: "CPU",
       laptop_cpu_cores: "",
@@ -71,21 +71,21 @@ const Addnote = () => {
       ...laptopDetail,
     };
 
-
     if (onOff === true) {
       await axios({
         method: "post",
         url: "https://pcfy.redberryinternship.ge/api/laptop/create",
         data: data,
         headers: { "Content-Type": "multipart/form-data" },
-      }).then(res => console.log('done')).catch((err) => console.log(err));
-      localStorage.removeItem('page')
-      localStorage.removeItem('image')
-      localStorage.removeItem('items')
-      localStorage.removeItem('file')
-      localStorage.removeItem('laptop')
+      })
+        .then((res) => console.log("done"))
+        .catch((err) => console.log(err));
+      localStorage.removeItem("page");
+      localStorage.removeItem("image");
+      localStorage.removeItem("items");
+      localStorage.removeItem("file");
+      localStorage.removeItem("laptop");
     }
-
   }
 
   const handleChange = (e) => {
@@ -126,12 +126,11 @@ const Addnote = () => {
   let check = () => {
     let regExName = /^([ა-ჰ]{2,})$/gm;
 
-    let regExSurname = /^([ა-ჰ]{2,})$/gm
+    let regExSurname = /^([ა-ჰ]{2,})$/gm;
 
     let regExEmail = /^([a-zA-Z0-9]+@redberry\.ge)$/gm;
 
     let regExPhoneNumber = /^(\+995[0-9]{9})$/gi;
-
 
     if (regExName.test(objInputs.name) === false) {
       return setNameErr(true);
@@ -140,7 +139,7 @@ const Addnote = () => {
     }
 
     if (regExSurname.test(objInputs.surname) === false) {
-      return  SetSurnameErr(true);
+      return SetSurnameErr(true);
     } else {
       SetSurnameErr(false);
     }
@@ -165,7 +164,7 @@ const Addnote = () => {
       setPhone_numberErr(false);
     }
 
-    return setPage(2)
+    return setPage(2);
   };
 
   return (
@@ -179,6 +178,17 @@ const Addnote = () => {
       >
         <img src={Vector} alt="vector" />
       </button>
+      {page === 1 ? (
+        <div className="addnote-header-for-mobile-container">
+          <p className="addnote-header-for-mobile">თანამშრომლის ინფო</p>
+          <span>{`${page}/2`}</span>
+        </div>
+      ) : (
+        <div className="addnote-header-for-mobile-container">
+          <p className="addnote-header-for-mobile">ლეპტოპის მახასიათებლები</p>
+          <span>{`${page}/2`}</span>
+        </div>
+      )}
       <div className="addnote-header">
         <p
           className={page === 1 ? "underline" : null}
@@ -246,8 +256,8 @@ const Addnote = () => {
             <div
               className={
                 teamErr
-                  ? "addnote-form-select red-line-team"
-                  : "addnote-form-select"
+                  ? "addnote-form-select margin-for-select red-line-team"
+                  : "addnote-form-select margin-for-select"
               }
             >
               {objInputs.team_id === "თიმი" ? (
