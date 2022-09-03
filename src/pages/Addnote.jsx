@@ -124,9 +124,9 @@ const Addnote = () => {
   });
 
   let check = () => {
-    let regExName = /^([ა-ჰ]{2,})$/gm;
+    let regExName = /^([ა-ჰ][^-\s]{2,})$/gm;
 
-    let regExSurname = /^([ა-ჰ]{2,})$/gm;
+    let regExSurname = /^([ა-ჰ][^-\s]{2,})$/gm;
 
     let regExEmail = /^([a-zA-Z0-9]+@redberry\.ge)$/gm;
 

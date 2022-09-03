@@ -15,10 +15,12 @@ const DragDrop = ({ laptopDetail, setLaptopDetail, lapImgErr }) => {
   }, [laptopDetail]);
 
   const onDrop = useCallback((acceptedFiles) => {
+    
+
     acceptedFiles.map((file) => {
       setLaptopDetail((prev) => ({
         ...prev,
-        laptop_image: file,
+        laptop_image: file
       }));
       const reader = new FileReader();
       reader.onload = () => {
@@ -97,8 +99,8 @@ const DragDrop = ({ laptopDetail, setLaptopDetail, lapImgErr }) => {
             src={fileimg}
             style={{
               position: "absolute",
-              width: "100%",
-              height: "100%",
+              width: "101%",
+              height: "101%",
               objectFit: "cover",
               borderRadius: "18px",
             }}
