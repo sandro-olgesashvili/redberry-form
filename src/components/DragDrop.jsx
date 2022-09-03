@@ -95,7 +95,7 @@ const DragDrop = ({ laptopDetail, setLaptopDetail, lapImgErr }) => {
               position: "absolute",
               width: "100%",
               height: "100%",
-              objectFit: "contain",
+              objectFit: "cover",
               borderRadius: "18px",
             }}
           />
@@ -103,7 +103,7 @@ const DragDrop = ({ laptopDetail, setLaptopDetail, lapImgErr }) => {
       </div>
       {fileimg !== "" ?<div className="check">
         <img src={checkdone} alt="check" />
-        <span>{laptopDetail.laptop_image.path},  {(laptopDetail.laptop_image.size / 10000 ).toFixed(0)} mb</span>
+        <span>{laptopDetail.laptop_image.path},  {(laptopDetail.laptop_image.size / 1000000 ).toFixed(0)} mb</span>
       </div>: null}
     </div>
   );

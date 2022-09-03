@@ -4,6 +4,7 @@ import Brands from "./Brands";
 import { useState, useRef } from "react";
 import Cpu from "./Cpu";
 import ErrImg from "../images/errmsg.svg";
+import lari from '../images/currency.svg'
 
 const LaptopForm = ({
   setLaptopDetail,
@@ -34,7 +35,7 @@ const LaptopForm = ({
   //chec function
 
   const laptopErrCheck = () => {
-    const regexLapName = /([a-zA-Z0-9!@#$%^&*()_+=])+$/gm;
+    const regexLapName = /^([a-zA-Z0-9!@#$%^&*()_+=])+$/gm;
 
     if (laptopDetail.laptop_image === "") {
       return setLapImgErr(true);
@@ -145,15 +146,6 @@ const LaptopForm = ({
       </div>
       <div className="cpu">
         <div className={lapCpuErr ? "cpu-select red-line-team" : "cpu-select"}>
-          {/* {laptopDetail.laptop_cpu === "CPU" ? (
-            <span>{laptopDetail.laptop_cpu}</span>
-          ) : (
-            cpus.map((cpu, index) => {
-              if (cpu.id === laptopDetail.laptop_cpu) {
-                return <span key={index}>{cpu.name}</span>;
-              }
-            })
-          )} */}
           <span>{laptopDetail.laptop_cpu}</span>
           <button type="button" onClick={() => setCpuOnOff((prev) => !prev)}>
             <img src={VectorDown} alt="vec" />
@@ -174,6 +166,7 @@ const LaptopForm = ({
           }
         >
           <label>CPU-ს ბირთვი</label>
+          
           <input
             className={lapCpucoresErr ? "red-line" : ""}
             type="number"
@@ -184,6 +177,8 @@ const LaptopForm = ({
               handleChangeLaptop(e);
             }}
           />
+
+
           <small className={lapCpucoresErr ? "red-line-sm" : ""}>
             მხოლოდ ციფრები
           </small>
@@ -312,16 +307,19 @@ const LaptopForm = ({
             }
           >
             <label>ლეპტოპის ფასი</label>
-            <input
-              className={priceErr ? "red-line" : ""}
-              type="number"
-              name="laptop_price"
-              placeholder="365"
-              value={laptopDetail.laptop_price}
-              onChange={(e) => {
-                handleChangeLaptop(e);
-              }}
-            />
+            <div className="currency-cont">
+              <input
+                className={priceErr ? "red-line" : ""}
+                type="number"
+                name="laptop_price"
+                placeholder="365"
+                value={laptopDetail.laptop_price}
+                onChange={(e) => {
+                  handleChangeLaptop(e);
+                }}
+              />
+              <img src={lari} alt="lari" />
+            </div>
             <small className={priceErr ? "red-line-sm" : ""}>
               მხოლოდ ციფრები
             </small>

@@ -26,7 +26,7 @@ const Addnote = () => {
 
   const navigate = useNavigate();
   const [page, setPage] = useState(
-    JSON.parse(localStorage.getItem("page")) || 1
+    JSON.parse(localStorage.getItem("page")) || 2
   );
 
   const [openClose, setOpenClose] = useState(false);
@@ -124,11 +124,11 @@ const Addnote = () => {
   });
 
   let check = () => {
-    let regExName = /([ა-ჰ]{2,})$/gm;
+    let regExName = /^([ა-ჰ]{2,})$/gm;
 
-    let regExSurname = /([ა-ჰ]{2,})$/gm
+    let regExSurname = /^([ა-ჰ]{2,})$/gm
 
-    let regExEmail = /([a-zA-Z0-9]+@redberry\.ge)$/gm;
+    let regExEmail = /^([a-zA-Z0-9]+@redberry\.ge)$/gm;
 
     let regExPhoneNumber = /^(\+995[0-9]{9})$/gi;
 

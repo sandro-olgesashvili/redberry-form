@@ -602,7 +602,7 @@ input[type="radio"]::after {
 
 .laptop-list-item {
   padding: 14px;
-  background-color: #EAFAFF;
+  background-color: #eafaff;
   border: 1px solid #aed1ea;
   border-radius: 20px;
   display: flex;
@@ -651,9 +651,113 @@ input[type="radio"]::after {
   line-height: 21px;
   letter-spacing: 0em;
   text-align: left;
-  color: #4386A9;
+  color: #4386a9;
   margin-top: 22px;
   text-decoration: underline;
 }
 
+.laptop-info {
+  margin-top: 76px;
+}
 
+.laptop-info-header {
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-align: center;
+  margin-bottom: 84px;
+}
+
+.laptop-info-image-personal-info {
+  display: flex;
+  align-items: center;
+  padding-bottom: 84px;
+  border-bottom: 1px solid #A5A5A5;
+
+}
+
+.laptop-info-container {
+  padding: 0 371px;
+}
+.laptop-info-image-personal-info img {
+  width: 577px;
+  height: 342px;
+  object-fit: cover;
+  margin-right: 68px;
+}
+
+.span-label {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 27px;
+  letter-spacing: 0em;
+  color: #2e2e2e;
+  text-align: left;
+  display: flex;
+  gap: 32px;
+  flex-direction: column;
+  margin-right: 80px;
+}
+
+.span-data {
+  display: flex;
+  flex-direction: column;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0em;
+  text-align: left;
+  gap: 32px;
+  color:#797979
+}
+.laptop-info-technical {
+  padding-top:54px;
+  padding-bottom: 77px;
+  border-bottom: 1px solid #A5A5A5;
+  display: flex;
+  gap: 211px;
+}
+
+
+.laptop-info-technical-first {
+  display: flex;
+  gap: 88px;
+}
+.laptop-info-technical-second {
+  display: flex;
+  gap: 67px;
+}
+.laptop-info-price-state {
+  display: flex;
+  gap:246px;
+  margin-top: 54px;
+  margin-bottom: 91px;
+}
+
+
+.laptop-info-price-state-first {
+  display: flex;
+  gap: 19px;
+}
+
+.laptop-info-price-state-second {
+  display: flex;
+}
+
+.currency-cont {
+  position: relative;
+  height: 60px;
+}
+
+.currency-cont input {
+  position: absolute;
+  width: 100%;
+}
+.currency-cont img {
+  position: absolute;
+  right: 30px;
+  bottom: 20px;
+  width:18px;
+  height: 21px;
+}
