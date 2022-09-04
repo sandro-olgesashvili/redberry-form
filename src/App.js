@@ -10,12 +10,12 @@ function App() {
   return (
     <Routes>
       <Route path="/redberry-form/" element={<Home />} />
-      <Route path="/addnote" element={<Addnote />} />
+      <Route path="/redberry-form/addnote" element={<Addnote />} />
       <Route
-        path="/laptoplist"
+        path="/redberry-form/laptoplist"
         element={<LaptopList  />}
       />
-      <Route path="/laptoplist/:id" element={<SingleLaptop />} />
+      <Route path="/redberry-form/laptoplist/:id" element={<SingleLaptop />} />
     </Routes>
   );
 }
