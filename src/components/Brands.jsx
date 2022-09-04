@@ -1,7 +1,6 @@
 const Brands = ({brands, setLaptopDetail, setBrandOnOff}) => {
     return ( 
         <ul className="brands-ul"
-            onClick={() => console.log(brands)}
             >
             {brands.map((item, index) => (
                 <li key={index}

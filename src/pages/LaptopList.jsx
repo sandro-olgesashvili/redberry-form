@@ -10,7 +10,7 @@ const LaptopList = () => {
 
   useEffect(() => {
     fetch(
-      "https://pcfy.redberryinternship.ge/api/laptops?token=bae8e75dfddb300fd995a39a32dbdebc")
+      "https://pcfy.redberryinternship.ge/api/laptops?token=c980747f224c6577ccc7e44b6b0a05b4")
       .then((res) => res.json())
       .then((data) => setLaptopData(data.data));
   }, []);

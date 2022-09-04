@@ -49,7 +49,7 @@ const Addnote = () => {
   );
   const [laptopDetail, setLaptopDetail] = useState(
     JSON.parse(localStorage.getItem("laptop")) || {
-      token: "bae8e75dfddb300fd995a39a32dbdebc",
+      token: "c980747f224c6577ccc7e44b6b0a05b4",
       laptop_name: "",
       laptop_image: '',
       laptop_brand_id: "ლეპტოპის ბრენდი",
@@ -124,13 +124,13 @@ const Addnote = () => {
   });
 
   let check = () => {
-    let regExName = /^([ა-ჰ][^-\s]{2,})$/gm;
+    let regExName = /^([ა-ჰ][^-\s]{1,})$/g;
 
-    let regExSurname = /^([ა-ჰ][^-\s]{2,})$/gm;
+    let regExSurname = /^([ა-ჰ][^-\s]{1,})$/g;
 
-    let regExEmail = /^([a-zA-Z0-9]+@redberry\.ge)$/gm;
+    let regExEmail = /^([a-zA-Z0-9]+@redberry\.ge)$/g;
 
-    let regExPhoneNumber = /^(\+995[0-9]{9})$/gi;
+    let regExPhoneNumber = /^(\+995[0-9]{9})$/g;
 
     if (regExName.test(objInputs.name) === false) {
       return setNameErr(true);

@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback,  useState } from "react";
 import ErrMsg from "../images/errmsg.svg";
 import checkdone from "../images/checkdone.svg";
 import photologo from "../images/photologo.png";
@@ -6,17 +6,10 @@ import photologo from "../images/photologo.png";
 import { useDropzone } from "react-dropzone";
 
 const DragDrop = ({ laptopDetail, setLaptopDetail, lapImgErr }) => {
-  const [fileimg, setFileimg] = useState(
-    JSON.parse(localStorage.getItem("image")) || ""
-  );
-
-  useEffect(() => {
-    console.log(laptopDetail);
-  }, [laptopDetail]);
+  const [fileimg, setFileimg] = useState("");
 
   const onDrop = useCallback((acceptedFiles) => {
-    
-
+  
     acceptedFiles.map((file) => {
       setLaptopDetail((prev) => ({
         ...prev,
@@ -32,15 +25,11 @@ const DragDrop = ({ laptopDetail, setLaptopDetail, lapImgErr }) => {
 
   const { getRootProps, getInputProps, isDragActive, open } = useDropzone({
     onDrop,
-
-    // noClick: true,
     noKeyboard: true,
     multiple: false,
   });
 
-  useEffect(() => {
-    localStorage.setItem("image", JSON.stringify(fileimg));
-  });
+
 
   return (
     <div>

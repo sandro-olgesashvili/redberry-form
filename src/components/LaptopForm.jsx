@@ -5,6 +5,7 @@ import { useState, useRef } from "react";
 import Cpu from "./Cpu";
 import ErrImg from "../images/errmsg.svg";
 import lari from '../images/currency.svg'
+import { useEffect } from "react";
 
 const LaptopForm = ({
   setLaptopDetail,
@@ -32,12 +33,13 @@ const LaptopForm = ({
   const [stateErr, setStateErr] = useState(false);
   const [priceErr, setPriceErr] = useState(false);
 
-  //chec function
 
   const laptopErrCheck = () => {
-    const regexLapName = /^([a-zA-Z0-9!@#$%^&*()_+=])+$/gm;
 
-    if (laptopDetail.laptop_image === "") {
+
+    const regexLapName = /^([a-zA-Z0-9\s!@#$%^&*()_+=])+$/g;
+
+    if (laptopDetail.laptop_image === "" || laptopDetail.laptop_image.name  === undefined) {
       return setLapImgErr(true);
     } else {
       setLapImgErr(false);
@@ -291,12 +293,12 @@ const LaptopForm = ({
               placeholder="დდ / თთ / წწწწ"
               type="text"
               name="laptop_purchase_date"
-              value={laptopDetail.purchase_date}
+              value={laptopDetail.laptop_purchase_date}
               onChange={(e) => {
                 handleChangeLaptop(e);
               }}
               onFocus={() => (ref.current.type = "date")}
-              onBlur={() => (ref.current.type = "text")}
+              onBlur={() =>  (ref.current.type = "text")}
             />
           </div>
           <div
