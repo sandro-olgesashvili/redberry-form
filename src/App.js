@@ -9,7 +9,7 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/redberry-form/" element={<Home />} />
+      <Route path="/" element={<Home />} />
       <Route path="/redberry-form/addnote" element={<Addnote />} />
       <Route
         path="/redberry-form/laptoplist"
