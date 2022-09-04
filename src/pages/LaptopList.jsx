@@ -30,7 +30,7 @@ const LaptopList = () => {
                         <div className="laptop-list-item-text">
                             <p>{item.user.name} {item.user.surname}</p>
                             <span>{item.laptop.name}</span>
-                            <Link className="see-more" to={`/redberry-form/laptoplist/${item.laptop.id}`}>მეტის ნახვა</Link>
+                            <Link className="see-more" to={`/laptoplist/${item.laptop.id}`}>მეტის ნახვა</Link>
                         </div>
 
                     </div>

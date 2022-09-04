@@ -384,18 +384,6 @@ const Addnote = () => {
             onOff={onOff}
           />
         ) : null}
-        {/* {page === 2 ?(<div className="two-btn">
-          <button
-            type="button"
-            className="back-btn-page"
-            onClick={() => setPage(1)}
-          >
-            უკან
-          </button>
-          <button type="submit" className="finish-btn">
-            დამახსოვრება
-          </button>
-        </div>): null} */}
       </form>
       <div className="logo-circle">
         <img src={LogoCircle} alt="logo" />
@@ -406,10 +394,10 @@ const Addnote = () => {
             <img src={Suc} alt="success" />
             <h3>ჩანაწერი დამატებულია!</h3>
             <div className="success-option">
-              <Link to="/redberry-form/laptoplist">
+              <Link to="/laptoplist">
                 <button className="finish-btn">სიაში გადაყვანა</button>
               </Link>
-              <Link to="/redberry-form/">
+              <Link to="/">
                 <span className="back-btn-page">მთავარი</span>
               </Link>
             </div>

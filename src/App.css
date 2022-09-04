@@ -685,7 +685,10 @@ input[type="radio"]::after {
 }
 
 .laptop-info-container {
-  padding: 0 371px;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .laptop-info-image-personal-info img {
   width: 577px;
@@ -728,6 +731,7 @@ input[type="radio"]::after {
   border-bottom: 1px solid #a5a5a5;
   display: flex;
   gap: 211px;
+  width: 1154px;
 }
 
 .laptop-info-technical-first {
@@ -743,6 +747,7 @@ input[type="radio"]::after {
   gap: 246px;
   margin-top: 54px;
   margin-bottom: 91px;
+  width: 1154px;
 }
 
 .laptop-info-price-state-first {
@@ -1122,5 +1127,11 @@ input[type="radio"]::after {
   }
   .span-label-dektop {
     display: none;
+  }
+  .laptop-info-price-state {
+    width:358px ;
+  }
+  .laptop-info-technical {
+    width: 358px;
   }
 }
