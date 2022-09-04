@@ -5,7 +5,6 @@ import { useState, useRef } from "react";
 import Cpu from "./Cpu";
 import ErrImg from "../images/errmsg.svg";
 import lari from '../images/currency.svg'
-import { useEffect } from "react";
 
 const LaptopForm = ({
   setLaptopDetail,
