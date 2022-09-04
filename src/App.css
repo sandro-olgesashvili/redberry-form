@@ -151,6 +151,12 @@
 .addnote-form-select-btn {
   border: none;
   cursor: pointer;
+  transform: rotate(0deg);
+}
+
+.addnote-form-select-btn img:hover {
+  transform: rotate(360deg);
+  transition: all 0.5s;
 }
 .teams-option {
   left: 0;
@@ -685,10 +691,7 @@ input[type="radio"]::after {
 }
 
 .laptop-info-container {
-  flex-direction: column;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin: 0 371px;
 }
 .laptop-info-image-personal-info img {
   width: 577px;
@@ -731,7 +734,6 @@ input[type="radio"]::after {
   border-bottom: 1px solid #a5a5a5;
   display: flex;
   gap: 211px;
-  width: 1154px;
 }
 
 .laptop-info-technical-first {
@@ -747,7 +749,6 @@ input[type="radio"]::after {
   gap: 246px;
   margin-top: 54px;
   margin-bottom: 91px;
-  width: 1154px;
 }
 
 .laptop-info-price-state-first {
@@ -805,6 +806,12 @@ input[type="radio"]::after {
 
 .laptop-info-image-personal {
   display: flex;
+}
+
+.no-data {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media screen and (max-width: 390px) {
@@ -890,6 +897,7 @@ input[type="radio"]::after {
   .next-btn button {
     padding: 12px 45px;
     margin-bottom: 58px;
+    margin-top:20px;
   }
   .drag-drop {
     width: 358px;
@@ -1017,6 +1025,9 @@ input[type="radio"]::after {
   .success {
     background-color: #ffffff;
   }
+  .laptop-list {
+    min-height: 844px;
+  }
   .laptop-list-items {
     grid-template-columns: repeat(1, 1fr);
     gap: 26px;
@@ -1134,4 +1145,5 @@ input[type="radio"]::after {
   .laptop-info-technical {
     width: 358px;
   }
+  
 }

@@ -49,7 +49,7 @@ const Addnote = () => {
   );
   const [laptopDetail, setLaptopDetail] = useState(
     JSON.parse(localStorage.getItem("laptop")) || {
-      token: "c980747f224c6577ccc7e44b6b0a05b4",
+      token:'4991177449ded293b86625268fd5469c',
       laptop_name: "",
       laptop_image: '',
       laptop_brand_id: "ლეპტოპის ბრენდი",
@@ -81,9 +81,7 @@ const Addnote = () => {
         .then((res) => console.log("done"))
         .catch((err) => console.log(err));
       localStorage.removeItem("page");
-      localStorage.removeItem("image");
       localStorage.removeItem("items");
-      localStorage.removeItem("file");
       localStorage.removeItem("laptop");
     }
   }
@@ -124,9 +122,9 @@ const Addnote = () => {
   });
 
   let check = () => {
-    let regExName = /^([ა-ჰ][^-\s]{1,})$/g;
+    let regExName = /^([ა-ჰ]{1,}[ა-ჰ])$/g;
 
-    let regExSurname = /^([ა-ჰ][^-\s]{1,})$/g;
+    let regExSurname = /^([ა-ჰ]{1,}[ა-ჰ])$/g;
 
     let regExEmail = /^([a-zA-Z0-9]+@redberry\.ge)$/g;
 

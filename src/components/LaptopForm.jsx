@@ -43,7 +43,7 @@ const LaptopForm = ({
     } else {
       setLapImgErr(false);
     }
-    if (regexLapName.test(laptopDetail.laptop_name) === false) {
+    if (regexLapName.test(laptopDetail.laptop_name.trim()) === false) {
       return setLapNameErr(true);
     } else {
       setLapNameErr(false);

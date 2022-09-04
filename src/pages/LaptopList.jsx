@@ -10,7 +10,7 @@ const LaptopList = () => {
 
   useEffect(() => {
     fetch(
-      "https://pcfy.redberryinternship.ge/api/laptops?token=c980747f224c6577ccc7e44b6b0a05b4")
+      "https://pcfy.redberryinternship.ge/api/laptops?token=4991177449ded293b86625268fd5469c")
       .then((res) => res.json())
       .then((data) => setLaptopData(data.data));
   }, []);
@@ -23,6 +23,7 @@ const LaptopList = () => {
                 <img src={Vector} alt="vector" />
             </button>
             <h2 className="laptop-list-header">ᲩᲐᲜᲐᲬᲔᲠᲔᲑᲘᲡ ᲡᲘᲐ</h2>
+            {laptopData.length === 0 && <h1 className="no-data">ჩანაწერი არ არის</h1>}
             <div className="laptop-list-items">
                 {laptopData.map((item, index) => (
                     <div key={index} className='laptop-list-item'>

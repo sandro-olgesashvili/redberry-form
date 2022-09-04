@@ -42,7 +42,7 @@ const SingleLaptop = () => {
   useEffect(() => {
     axios
       .get(
-        `https://pcfy.redberryinternship.ge/api/laptop/${id}?token=c980747f224c6577ccc7e44b6b0a05b4`
+        `https://pcfy.redberryinternship.ge/api/laptop/${id}?token=4991177449ded293b86625268fd5469c`
       )
       .then((res) => setLaptopDetail(res.data.data))
       .catch((err) => console.log(err));
