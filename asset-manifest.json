@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/redberry-form/static/css/main.d7d76bea.css",
-    "main.js": "/redberry-form/static/js/main.d2e3e0a2.js",
+    "main.js": "/redberry-form/static/js/main.8685a394.js",
     "static/media/HelveticaNeue.ttc": "/redberry-form/static/media/HelveticaNeue.67d426c3bd180e2ea838.ttc",
     "static/media/Frame.png": "/redberry-form/static/media/Frame.38e6f1ecf14d2349e049.png",
     "static/media/Group.png": "/redberry-form/static/media/Group.a5dc999aef89ea2c9f02.png",
@@ -11,10 +11,10 @@
     "static/media/Vectordown.svg": "/redberry-form/static/media/Vectordown.8344f04ea9aad3ed928624b38e59f96e.svg",
     "index.html": "/redberry-form/index.html",
     "main.d7d76bea.css.map": "/redberry-form/static/css/main.d7d76bea.css.map",
-    "main.d2e3e0a2.js.map": "/redberry-form/static/js/main.d2e3e0a2.js.map"
+    "main.8685a394.js.map": "/redberry-form/static/js/main.8685a394.js.map"
   },
   "entrypoints": [
     "static/css/main.d7d76bea.css",
-    "static/js/main.d2e3e0a2.js"
+    "static/js/main.8685a394.js"
   ]
 }
