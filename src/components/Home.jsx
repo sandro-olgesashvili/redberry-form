@@ -12,8 +12,8 @@ const Home = () => {
             <div className='frame'>
             </div>
             <nav className='nav-btns'>
-                <Link to='/addnote'>ᲩᲐᲜᲐᲬᲔᲠᲘᲡ ᲓᲐᲛᲐᲢᲔᲑᲐ</Link>
-                <Link to='/laptoplist'>ᲩᲐᲜᲐᲬᲔᲠᲔᲑᲘᲡ ᲡᲘᲐ</Link>
+                <Link to='/redberry-form/addnote'>ᲩᲐᲜᲐᲬᲔᲠᲘᲡ ᲓᲐᲛᲐᲢᲔᲑᲐ</Link>
+                <Link to='/redberry-form/laptoplist'>ᲩᲐᲜᲐᲬᲔᲠᲔᲑᲘᲡ ᲡᲘᲐ</Link>
             </nav>
         </div>
      );

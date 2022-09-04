@@ -406,10 +406,10 @@ const Addnote = () => {
             <img src={Suc} alt="success" />
             <h3>ჩანაწერი დამატებულია!</h3>
             <div className="success-option">
-              <Link to="/laptoplist">
+              <Link to="/redberry-form/laptoplist">
                 <button className="finish-btn">სიაში გადაყვანა</button>
               </Link>
-              <Link to="/">
+              <Link to="/redberry-form/">
                 <span className="back-btn-page">მთავარი</span>
               </Link>
             </div>
