@@ -23,7 +23,6 @@ const LaptopList = () => {
                 <img src={Vector} alt="vector" />
             </button>
             <h2 className="laptop-list-header">ᲩᲐᲜᲐᲬᲔᲠᲔᲑᲘᲡ ᲡᲘᲐ</h2>
-            {laptopData.length === 0 && <h1 className="no-data">ჩანაწერი არ არის</h1>}
             <div className="laptop-list-items">
                 {laptopData.map((item, index) => (
                     <div key={index} className='laptop-list-item'>
