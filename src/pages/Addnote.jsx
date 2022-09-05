@@ -270,7 +270,9 @@ const Addnote = () => {
               <button
                 type="button"
                 className="addnote-form-select-btn"
-                onClick={() => setOpenClose(!openClose)}
+                onClick={() => {setOpenClose(!openClose)
+                  setOpenClosePost(false)
+                }}
               >
                 <img src={Vectordown} alt="arrow" />
               </button>
@@ -303,7 +305,9 @@ const Addnote = () => {
               <button
                 type="button"
                 className="addnote-form-select-btn"
-                onClick={() => setOpenClosePost(!openClosePost)}
+                onClick={() => {setOpenClosePost(!openClosePost)
+                  setOpenClose(false)
+                }}
               >
                 <img src={Vectordown} alt="arrow" />
               </button>

@@ -37,7 +37,7 @@ const DragDrop = ({ laptopDetail, setLaptopDetail, lapImgErr }) => {
         {...getRootProps()}
         className={lapImgErr ? "drag-drop drag-drop-err" : "drag-drop"}
       >
-        <input {...getInputProps()} />
+        <input {...getInputProps()}/>
         {isDragActive ? (
           <div>
             {lapImgErr && (
