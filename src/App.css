@@ -1071,6 +1071,7 @@ input[type="radio"]::after {
   }
   .laptop-info-container {
     padding: 0;
+    margin: 0;
   }
   .laptop-info-container {
     padding-inline: 16px;
