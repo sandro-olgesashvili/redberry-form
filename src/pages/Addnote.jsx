@@ -128,7 +128,7 @@ const Addnote = () => {
 
     let regExEmail = /^([a-zA-Z0-9]+@redberry\.ge)$/g;
 
-    let regExPhoneNumber = /^(\+995[0-9]{9})$/g;
+    let regExPhoneNumber = /^(\+9955[0-9]{8})$/g;
 
     if (regExName.test(objInputs.name) === false) {
       return setNameErr(true);
